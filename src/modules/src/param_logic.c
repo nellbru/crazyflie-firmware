@@ -868,6 +868,7 @@ static bool persistentParamFromStorage(const char *key, void *buffer, size_t len
 
   if (PARAM_VARID_IS_VALID(varId)) {
     paramSet(varId.index, buffer);
+    paramNotifyChanged(varId.index);
   }
 
   return true;
